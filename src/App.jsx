@@ -5,6 +5,7 @@ import Counter from './componets/counter'
 import Timer from './componets/Timer'
 import Usecallback from './componets/Usecallback'
 import UseMemo from './componets/UseMemo'
+import UseReducer from './componets/UseReducer'
 const App = () => {
   return (
     <div>
@@ -13,8 +14,8 @@ const App = () => {
 {/* <Counter/> */}
 {/* <Timer  /> */}
 {/* <Usecallback/> */}
-<UseMemo/>
-
+{/* <UseMemo/> */}
+<UseReducer/>
     </div>
   )
 }
