@@ -12,6 +12,7 @@ const [count,setCount] = useState(0)
         })
 
     },[count])
+    
   return (
     <div>
       <button onClick={()=>{setCount(count+1)}}>+</button>
