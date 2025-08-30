@@ -48,7 +48,7 @@ const App = () => {
   <Link to={"/lazy"}>lazy</Link>
 </nav>
 <Suspense fallback={<h1>Loading....</h1>} >
-
+   
 <Routes>
   <Route path='/'element={<Home/>}/>
   <Route path='/about'element={<About/>}/>

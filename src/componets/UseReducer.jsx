@@ -23,7 +23,6 @@ function reducer(state,action){
         }
         default :return state
     }
-    
 }
 
 const [count,dispatch] =useReducer(reducer,initialvalue)
