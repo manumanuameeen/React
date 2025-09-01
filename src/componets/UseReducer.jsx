@@ -30,7 +30,7 @@ const [count,dispatch] =useReducer(reducer,initialvalue)
   return (
     <div>
       
-<h1>count :{count.count}</h1>
+<h1>count :{count.count}</h1> 
 <button onClick={()=>dispatch({type:"INC"})}>inc</button>
 <button onClick={()=>dispatch({type:"DEC"})}>dec</button>
 <button onClick={()=>dispatch({type:"RES"})}>reset</button>
