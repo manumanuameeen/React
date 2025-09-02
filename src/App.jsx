@@ -19,6 +19,9 @@ import Home from './componets/navigate/Home'
 import About from './componets/navigate/About'
 import Contact from './componets/navigate/Contact'
 const LazyCom = React.lazy(()=>import("./componets/lazy.loading/LazyParent"));
+import Store from './redux/store'
+import { Provider } from 'react-redux'
+import Redux_demo from './redux/Redux.demo'
 const App = () => {
   return (
     <div>
@@ -39,7 +42,7 @@ const App = () => {
 {/* <PARENT/> */}
 {/* <SB_PARENT/> */}
 
-
+{/* 
 <BrowserRouter>
 <nav>
   <Link to={"/about"}>About</Link>
@@ -57,7 +60,12 @@ const App = () => {
 </Routes>
 </Suspense>
 
-</BrowserRouter>
+</BrowserRouter> */}
+<Provider store={Store}>
+
+<Redux_demo/>
+
+</Provider>
     </div>
   )
 }
