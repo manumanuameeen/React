@@ -5,15 +5,19 @@ const Timer = () => {
     const [isRuning, setRuning] = useState(false);
     const [count, setCount] = useState(0)
 
+
     useEffect(() => {
         let interval;
         if (isRuning) {
+            console.log("acivated");
+            
             interval = setInterval(() => {
                 setCount(prev => prev + 1)
             }, 1000)
 
         }
         return (() => {
+            console.log("cleared")
             clearInterval(interval)
         })
 

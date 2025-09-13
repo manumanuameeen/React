@@ -4,17 +4,15 @@ import { useRef } from 'react'
 
 
 const Parent = () => {
+let inputRef = useRef("")
 
-    let inputRef = useRef(null)
-
-    function hanldeFocus(){
-        inputRef.current.focus();
-    }
+const handleFocus =()=>{
+  inputRef.current.focus();
+}
   return (
     <div>
-        <h1>forward ref</h1>
-      <Child ref={inputRef} />
-      <button onClick={hanldeFocus}>Focus</button>
+     <Child ref={inputRef} />
+     <button onClick={handleFocus}>get focus</button>
     </div>
   )
 }

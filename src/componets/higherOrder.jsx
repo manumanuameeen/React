@@ -1,29 +1,26 @@
 import React, { useState } from 'react'
 
-function withLoader(Wrapper){
-    return function enhanced({isLoading,...prop}){
-        if(isLoading){
-            return  <h2>Loading...</h2>
-        }
-        return <Wrapper {...prop} />
+function higherOrder(Small) {
+  return function ({ name ,loading}) {
+    if (loading) {
+      return <h1>Loading....</h1>
     }
+    return <Small name={name} />
+  }
 }
 
-function wraper({name}){
-    return <h1>name:{name}</h1>
+function Small({ name }) {
+  return <h1> name : {name}</h1>
 }
-
-const EnhancedFun = withLoader(wraper)
-
-
+const Enhanced = higherOrder(Small)
 const HigherOrder = () => {
-    const [s,setS] = useState(false);
-  return (
-    <div>
-<button onClick={()=>{setS(prev=>!prev)}}>show</button>
-      <EnhancedFun isLoading={s} name={"moosa learnd"}/>
-    </div>
-  )
+  const [loading, setLoading] = useState(false)
+  return <div>
+<Enhanced  name={"ameen"} loading={loading} />
+<button onClick={()=>setLoading(!loading)}>toggle</button>
+  </div>
+
+
 }
 
 export default HigherOrder
